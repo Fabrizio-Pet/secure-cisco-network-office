@@ -1,0 +1,120 @@
+Building configuration...
+
+Current configuration : 1586 bytes
+!
+version 12.2
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+service password-encryption
+!
+hostname R1
+!
+!
+!
+enable secret 5 $1$mERr$5.a6P4JqbNiMX01usIfka/
+enable password 7 0822455D0A16
+!
+!
+!
+ip dhcp pool POOL_AVVOCATI
+ network 192.168.0.128 255.255.255.128
+ default-router 192.168.0.129
+ dns-server 8.8.8.8
+ip dhcp pool POOL_SEGRETERIA
+ network 192.168.0.0 255.255.255.128
+ default-router 192.168.0.1
+ dns-server 8.8.8.8
+!
+!
+!
+ip cef
+no ipv6 cef
+!
+!
+!
+username admin privilege 15 secret 5 $1$mERr$zRa/9f/I1VbxXdMJyN3c//
+!
+!
+!
+!
+!
+!
+!
+!
+ip ssh version 2
+ip domain-name Rossi-&-Associati.it
+!
+!
+!
+!
+!
+!
+!
+!
+interface FastEthernet0/0
+ ip address 192.168.0.1 255.255.255.128
+ ip access-group 100 in
+ duplex auto
+ speed auto
+!
+interface FastEthernet1/0
+ ip address 8.8.8.1 255.0.0.0
+ duplex auto
+ speed auto
+!
+interface Serial2/0
+ no ip address
+ clock rate 2000000
+ shutdown
+!
+interface Serial3/0
+ no ip address
+ clock rate 2000000
+ shutdown
+!
+interface FastEthernet4/0
+ no ip address
+ shutdown
+!
+interface FastEthernet5/0
+ no ip address
+ shutdown
+!
+interface FastEthernet6/0
+ ip address 192.168.0.129 255.255.255.128
+ duplex auto
+ speed auto
+!
+ip classless
+!
+ip flow-export version 9
+!
+!
+access-list 100 permit ip host 192.168.0.5 any
+access-list 100 deny ip 192.168.0.0 0.0.0.127 192.168.0.128 0.0.0.127
+access-list 100 permit ip any any
+!
+!
+!
+!
+!
+!
+line con 0
+ password 7 0822455D0A16544541
+ login
+!
+line aux 0
+!
+line vty 0 4
+ password 7 0822455D0A16544541
+ login local
+ transport input ssh
+line vty 5 15
+ login local
+ transport input ssh
+!
+!
+!
+end
+
+
