@@ -14,7 +14,7 @@ The fictional client required a complete overhaul of their network infrastructur
 ---
 
 ## 🗺️ Network Topology
-![Network Topology Diagram]([INSERISCI_QUI_IL_LINK_O_IL_PERCORSO_DELLO_SCREENSHOT_FINALE])
+![Network Topology Diagram](topology.png)
 *Figure 1: Complete network diagram illustrating physical separation and structural links.*
 
 ---
