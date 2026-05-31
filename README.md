@@ -67,6 +67,19 @@ Disabled unencrypted legacy management utilities (Telnet) to shield administrati
 
 ---
 
+## 🔐 Lab Credentials (Demo Purposes Only)
+For demonstration and testing purposes within Cisco Packet Tracer, the following credentials have been configured:
+
+- **Enable Password (Router & Switches):** `cisco123`
+- **SSH Remote Access Username:** `admin`
+- **SSH Remote Access Password:** `Superpassword!`
+
+*Note: To connect via SSH from a workstation inside Packet Tracer, open the Command Prompt and run:*
+```bash
+ssh -l admin 192.168.0.129
+```
+---
+
 ## 🛠️ How to Run the Project
 1. Download and install **Cisco Packet Tracer**.
 2. Clone this repository: `git clone https://github.com/Fabrizio-Pet/secure-cisco-network-office.git`
